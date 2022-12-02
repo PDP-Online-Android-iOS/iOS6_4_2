@@ -8,6 +8,16 @@
 import SwiftUI
 
 struct ContentView: View {
+    
+    @ObservedObject var defs = UsersDefaults()
+    
+    init() {
+        print(defs.account)
+        var account = Account(holderName: "OgabekDev", cardName: "Hamkorbank VISA Platinum", accountBalance: "$22145", spendingLimit: "$50000")
+        defs.account = account
+        print(defs.account)
+    }
+    
     var body: some View {
         VStack {
             Image(systemName: "globe")
